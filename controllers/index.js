@@ -2,7 +2,7 @@ const db = require('../db/queries');
 
 module.exports = {
   async get(req, res) {
-    const products = await db.getAllProducts();
-    res.render('index', { title: 'Products', products });
+    const items = await db.getItems();
+    res.render('index', { title: 'Items', items });
   },
 };
