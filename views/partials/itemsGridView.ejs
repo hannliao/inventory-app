@@ -1,0 +1,12 @@
+<a href="/items/new">Add Item</a>
+
+<% items.forEach((item) => { %>
+<a href="/items/<%= item.id %>">
+  <div>
+    <img src="<%= item.src %>" alt="<%= item.name %>" />
+    <p><%= item.name %></p>
+    <p>$<%= item.price %></p>
+    <p><%= item.qty %> pieces</p>
+  </div>
+</a>
+<% }) %>

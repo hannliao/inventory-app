@@ -1,0 +1,24 @@
+<a href="/items/new">Add Item</a>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Qty</th>
+  </tr>
+
+  <% items.forEach((item) => { %>
+
+  <tr>
+    <td colspan="4">
+      <a href="/items/<%= item.id %>">
+        <img src="<%= item.src %>" alt="<%= item.name %>" />
+        <span><%= item.name %></span>
+        <span>$<%= item.price %></span>
+        <span><%= item.qty %></span>
+      </a>
+    </td>
+  </tr>
+
+  <% }) %>
+</table>

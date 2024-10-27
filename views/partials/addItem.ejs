@@ -1,0 +1,12 @@
+<h2><%= title %></h2>
+<form action="/items/new" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="name" required />
+  <label for="price">Price</label>
+  <input type="number" name="price" min="0" max="50" required />
+  <label for="qty">Qty </label>
+  <input type="number" name="qty" min="0" max="100" required />
+  <label for="src">Image</label>
+  <input type="file" name="src" accept="image/*" required />
+  <button type="submit">Add Item</button>
+</form>

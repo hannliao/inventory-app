@@ -5,6 +5,13 @@ async function getItems() {
   return rows;
 }
 
+async function getItemDetails(id) {
+  const { rows } = await pool.query(`SELECT * FROM origami WHERE id = $1`, [
+    id,
+  ]);
+  return rows[0];
+}
+
 async function getCategories() {
   const { rows } = await pool.query('SELECT category FROM categories;');
   return rows.map((row) => row.category);
@@ -57,6 +64,7 @@ async function updateCategory(category) {
 
 module.exports = {
   getItems,
+  getItemDetails,
   getCategories,
   filterItems,
   addItem,

@@ -20,7 +20,8 @@ app.use('/items', itemsRouter);
 
 app.use((err, req, res, next) => {
   console.error(err);
-  res.status(err.statusCode || 500).send(`Error: ${err.message}`);
+  res.status(err.statusCode || 500);
+  res.render('error', { message: err.message || 'Internal Server Error' });
 });
 
 const PORT = process.env.PORT || 5434;

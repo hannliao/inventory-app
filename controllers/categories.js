@@ -2,11 +2,15 @@ const db = require('../db/queries');
 
 async function getCategories(req, res) {
   const categories = await db.getCategories();
-  res.render('categories', { title: 'Categories', categories });
+  res.render('index', {
+    title: 'Categories',
+    main: 'partials/categories',
+    categories,
+  });
 }
 
 async function addCategoryGet(req, res) {
-  res.render('addCategory', { title: 'Add Category' });
+  res.render('index', { title: 'Add Category', main: 'partials/addCategory' });
 }
 
 async function addCategoryPost(req, res) {

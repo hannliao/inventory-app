@@ -1,0 +1,6 @@
+<a href="/categories/new">Add Category</a>
+<% categories.forEach((category) => { %>
+<a href="/items/<%=category%>">
+  <div><%= category %></div>
+</a>
+<% }) %>

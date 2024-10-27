@@ -7,22 +7,10 @@
     <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body>
-    <table>
-      <tr>
-        <th>Item</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Qty</th>
-      </tr>
+    <%- include("partials/navbar") %>
 
-      <% items.forEach((item) => { %>
-      <tr>
-        <td><img src="<%= item.src %>" alt="<%= item.name %>" /></td>
-        <td><%= item.name %></td>
-        <td><%= item.price %></td>
-        <td><%= item.qty %></td>
-      </tr>
-      <% }) %>
-    </table>
+    <main><%- include(main) %></main>
+
+    <%- include("partials/footer") %>
   </body>
 </html>
