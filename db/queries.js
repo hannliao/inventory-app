@@ -1,7 +1,7 @@
 const pool = require('./pool');
 
 async function getItems() {
-  const { rows } = await pool.query('SELECT * FROM origami;');
+  const { rows } = await pool.query('SELECT * FROM origami ORDER BY id;');
   return rows;
 }
 
@@ -46,9 +46,9 @@ async function updateItem(item) {
   await pool.query(
     `
     UPDATE origami
-    SET name = $1, src = $2, price = $3, qty = $4
-    WHERE id = $5`,
-    [item.name, item.src, item.price, item.qty, item.id]
+    SET name = $2, src = $3, price = $4, qty = $5
+    WHERE id = $1`,
+    [item.id, item.name, item.src, item.price, item.qty]
   );
 }
 

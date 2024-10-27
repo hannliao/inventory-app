@@ -1,11 +1,26 @@
-<form action="/items/edit" method="POST">
+<form action="/items/edit/<%= item.id %>" method="POST">
+  <img src="<%=item.src%>" alt="" />
   <label for="name">Name</label>
-  <input type="text" name="name" value="{name}" required />
+  <input type="text" name="name" value="<%=item.name%>" required />
   <label for="price">Price</label>
-  <input type="number" name="price" min="0" max="50" required />
+  <input
+    type="number"
+    name="price"
+    value="<%=item.price%>"
+    min="0"
+    max="50"
+    required
+  />
   <label for="qty">Qty </label>
-  <input type="number" name="qty" min="0" max="100" required />
+  <input
+    type="number"
+    name="qty"
+    value="<%=item.qty%>"
+    min="0"
+    max="100"
+    required
+  />
   <label for="src">Image</label>
-  <input type="file" name="src" accept="image/*" required />
+  <input type="file" name="src" accept="image/*" value="<%=item.src%>" />
   <button type="submit">Edit</button>
 </form>

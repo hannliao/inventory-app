@@ -44,13 +44,17 @@ async function addItemPost(req, res) {
 }
 
 async function editItemGet(req, res) {
-  res.render('index', { title: 'Edit Items', main: 'partials/editItem' });
+  const item = await db.getItemDetails(req.params.id);
+  res.render('index', { title: 'Edit Items', main: 'partials/editItem', item });
 }
 
 async function editItemPost(req, res) {
+  const currentItem = await db.getItemDetails(req.params.id);
+
   const item = {
+    id: req.params.id,
     name: req.body.name,
-    src: req.body.src,
+    src: req.file ? req.file.path : currentItem.src,
     price: req.body.price,
     qty: req.body.qty,
   };
