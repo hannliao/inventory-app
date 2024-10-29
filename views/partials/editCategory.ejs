@@ -1,17 +1,22 @@
 <h1 class="font-bold m-5"><%= title %></h1>
-<form action="/categories/new" method="POST" class="flex flex-col">
-  <label for="name">Category</label>
+<form
+  action="/categories/edit/<%= category.name %>"
+  method="POST"
+  class="flex flex-col"
+>
+  <label for="category">Category</label>
   <input
     type="text"
     name="name"
-    required
+    value="<%= category.name%>"
     class="p-2 border border-slate-500 rounded my-2"
   />
+
   <div class="flex justify-between my-4">
     <label for="color">Color</label>
-    <input type="color" name="color" required />
+    <input type="color" name="color" value="<%= category.color %>" />
   </div>
   <button type="submit" class="px-6 py-3 border border-black rounded-md">
-    Add Category
+    Save
   </button>
 </form>

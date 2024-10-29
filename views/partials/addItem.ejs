@@ -1,12 +1,33 @@
-<h2><%= title %></h2>
-<form action="/items/new" method="POST">
+<h1 class="font-bold m-5"><%= title %></h1>
+<form action="/items/new" method="POST" class="flex flex-col">
   <label for="name">Name</label>
-  <input type="text" name="name" required />
+  <input
+    type="text"
+    name="name"
+    required
+    class="p-2 border border-slate-500 rounded mb-2"
+  />
   <label for="price">Price</label>
-  <input type="number" name="price" min="0" max="50" required />
+  <input
+    type="number"
+    name="price"
+    min="0"
+    max="50"
+    required
+    class="p-2 border border-slate-500 rounded mb-2"
+  />
   <label for="qty">Qty </label>
-  <input type="number" name="qty" min="0" max="100" required />
+  <input
+    type="number"
+    name="qty"
+    min="0"
+    max="100"
+    required
+    class="p-2 border border-slate-500 rounded mb-2"
+  />
   <label for="src">Image</label>
-  <input type="file" name="src" accept="image/*" required />
-  <button type="submit">Add Item</button>
+  <input type="file" name="src" accept="image/*" required class="mb-2" />
+  <button type="submit" class="my-2 px-6 py-3 border border-black rounded-md">
+    Add Item
+  </button>
 </form>

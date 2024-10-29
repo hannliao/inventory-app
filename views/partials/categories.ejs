@@ -1,6 +1,24 @@
-<a href="/categories/new">Add Category</a>
-<% categories.forEach((category) => { %>
-<a href="/items/<%=category%>">
-  <div><%= category %></div>
-</a>
-<% }) %>
+<h1 class="font-bold m-5"><%= title %></h1>
+<div class="flex flex-row flex-wrap justify-center">
+  <% categories.forEach((category) => { %>
+  <div class="flex flex-col justify-start items-center h-44 m-4 group">
+    <a
+      href="/categories/<%=category.name%>"
+      style="background-color: <%=category.color%>"
+      class="w-32 h-32 m-2 rounded-full font-bold flex justify-center items-center"
+    >
+      <%= category.name %>
+    </a>
+    <a
+      href="/categories/edit/<%= category.name %>"
+      class="hidden group-hover:flex"
+      ><img src="/icons/edit.svg" alt=""
+    /></a>
+  </div>
+
+  <% }) %>
+</div>
+
+<a href="/categories/new" class="m-10 px-6 py-3 border border-black rounded-md"
+  >Add Category</a
+>

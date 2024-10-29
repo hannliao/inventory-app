@@ -4,8 +4,8 @@ module.exports = {
   async get(req, res) {
     const items = await db.getItems();
     res.render('index', {
-      title: 'Home',
-      main: 'partials/itemsListView',
+      title: 'Inventory',
+      main: 'partials/itemsGridView',
       items,
     });
   },

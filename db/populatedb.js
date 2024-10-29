@@ -12,7 +12,8 @@ const SQL = `
 
   CREATE TABLE IF NOT EXISTS categories (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    category VARCHAR(255) UNIQUE
+    name VARCHAR(255) UNIQUE,
+    color VARCHAR(255)
   );
 
   CREATE TABLE IF NOT EXISTS origami_categories (
@@ -39,14 +40,14 @@ const insertSQL = `
     ('hat', '/img/hat.svg', 9, 7),
     ('unicorn', '/img/unicorn.svg', 17, 14);
 
-  INSERT INTO categories (category) VALUES
-    ('pink'),
-    ('orange'),
-    ('yellow'),
-    ('green'),
-    ('blue'),
-    ('purple'),
-    ('grey');
+  INSERT INTO categories (name, color) VALUES
+    ('pink', '#de8ea7'),
+    ('orange', '#ff9721'),
+    ('yellow', '#ffec45'),
+    ('green', '#66ff7f'),
+    ('blue', '#45d4ff'),
+    ('purple', '#dfb8fc'),
+    ('grey', '#a3a3a3');
 
   INSERT INTO origami_categories (origami_id, category_id) VALUES
     (1, 3),

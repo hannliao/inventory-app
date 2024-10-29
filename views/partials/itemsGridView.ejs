@@ -1,12 +1,20 @@
-<a href="/items/new">Add Item</a>
-
-<% items.forEach((item) => { %>
-<a href="/items/<%= item.id %>">
-  <div>
-    <img src="<%= item.src %>" alt="<%= item.name %>" />
+<h1 class="font-bold m-5"><%= title %></h1>
+<div class="flex flex-wrap justify-center">
+  <% if (items.length) { %> <% items.forEach((item) => { %>
+  <a
+    href="/items/<%= item.id %>"
+    class="flex flex-col justify-center items-center w-36 p-5 border border-black rounded-md m-5"
+  >
+    <img src="<%= item.src %>" alt="<%= item.name %>" class="w-14 h-14" />
     <p><%= item.name %></p>
     <p>$<%= item.price %></p>
     <p><%= item.qty %> pieces</p>
-  </div>
-</a>
-<% }) %>
+  </a>
+  <% }) %> <% } else { %>
+  <p>No items found.</p>
+  <% } %>
+</div>
+
+<a href="/items/new" class="m-10 px-6 py-3 border border-black rounded-md"
+  >Add Item</a
+>
