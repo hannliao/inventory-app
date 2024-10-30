@@ -25,10 +25,10 @@
     required
     class="p-2 border border-slate-500 rounded mb-2"
   />
-  <label for="src">Image</label>
+  <label for="src" class="my-2">Image <i>(optional)</i></label>
   <input type="file" name="src" accept="image/*" class="mb-2" />
 
-  <label class="my-3">Select one or more categories:</label>
+  <label class="my-3">Select related categories <i>(optional)</i></label>
   <div class="h-36 flex flex-col flex-wrap">
     <% categories.forEach((category) => { %>
     <label for="categories" class="m-1"
