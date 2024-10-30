@@ -2,6 +2,9 @@
 
 Inventory of origami items, categorized by color.
 
+![inventory](https://github.com/user-attachments/assets/b3b9fc40-2c3b-47f1-b020-cd12c7bbaafb)
+![edit-item](https://github.com/user-attachments/assets/ffe0304f-e178-4586-b3cb-7eb7cfe38f59)
+
 ## Features
 
 - Add, view, edit, and delete origami items
