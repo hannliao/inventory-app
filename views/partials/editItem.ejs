@@ -16,7 +16,7 @@
       name="price"
       value="<%=item.price%>"
       min="0"
-      max="50"
+      max="100"
       required
       class="p-2 border border-slate-500 rounded mb-2"
     />
@@ -30,16 +30,10 @@
       required
       class="p-2 border border-slate-500 rounded mb-2"
     />
-    <label for="src">Image</label>
-    <input
-      type="file"
-      name="src"
-      accept="image/*"
-      value="<%=item.src%>"
-      class="mb-2"
-    />
+    <label for="src">Update image (optional)</label>
+    <input type="file" name="src" accept="image/*" class="mb-2" />
 
-    <label class="my-3">Select one or more categories:</label>
+    <label class="my-3">Related categories (optional)</label>
     <!-- prettier-ignore -->
     <div class="h-36 flex flex-col flex-wrap">
     <% categories.forEach((category) => { %>

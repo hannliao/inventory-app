@@ -41,11 +41,11 @@ const insertSQL = `
     ('unicorn', '/img/unicorn.svg', 17, 14);
 
   INSERT INTO categories (name, color) VALUES
-    ('pink', '#de8ea7'),
+    ('pink', '#ffa8ba'),
     ('orange', '#ff9721'),
     ('yellow', '#ffec45'),
-    ('green', '#66ff7f'),
-    ('blue', '#45d4ff'),
+    ('green', '#89e6ad'),
+    ('blue', '#5bc6e6'),
     ('purple', '#dfb8fc'),
     ('grey', '#a3a3a3');
 
