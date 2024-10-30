@@ -5,20 +5,22 @@
     <a
       href="/categories/<%=category.name%>"
       style="background-color: <%=category.color%>"
-      class="w-32 h-32 m-2 rounded-full font-bold flex justify-center items-center"
+      class="w-32 h-32 m-2 rounded-full font-bold flex justify-center items-center hover:ring-4 ring-inset"
     >
       <%= category.name %>
     </a>
     <a
       href="/categories/edit/<%= category.name %>"
       class="hidden group-hover:flex"
-      ><img src="/icons/edit.svg" alt=""
+      ><img src="/icons/edit.svg" alt="edit"
     /></a>
   </div>
 
   <% }) %>
 </div>
 
-<a href="/categories/new" class="m-10 px-6 py-3 border border-black rounded-md"
+<a
+  href="/categories/new"
+  class="text-sm m-10 px-6 py-3 border border-black rounded-md hover:bg-neutral-200"
   >Add Category</a
 >

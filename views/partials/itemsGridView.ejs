@@ -8,13 +8,15 @@
     <img src="<%= item.src %>" alt="<%= item.name %>" class="w-14 h-14" />
     <p><%= item.name %></p>
     <p>$<%= item.price %></p>
-    <p><%= item.qty %> pieces</p>
+    <p><%= item.qty %> <%= item.qty == 1 ? "piece" : "pieces" %></p>
   </a>
   <% }) %> <% } else { %>
   <p>No items found.</p>
   <% } %>
 </div>
 
-<a href="/items/new" class="m-10 px-6 py-3 border border-black rounded-md"
+<a
+  href="/items/new"
+  class="m-10 px-6 py-3 border border-black rounded-md hover:bg-neutral-200"
   >Add Item</a
 >

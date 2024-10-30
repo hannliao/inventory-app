@@ -1,22 +1,45 @@
-<h1 class="font-bold m-5"><%= title %></h1>
-<form
-  action="/categories/edit/<%= category.name %>"
-  method="POST"
-  class="flex flex-col"
->
-  <label for="category">Category</label>
-  <input
-    type="text"
-    name="name"
-    value="<%= category.name%>"
-    class="p-2 border border-slate-500 rounded my-2"
-  />
+<div class="flex flex-col">
+  <h1 class="font-bold m-5 text-center"><%= title %></h1>
+  <form
+    action="/categories/edit/<%= category.name %>"
+    method="POST"
+    class="flex flex-col"
+  >
+    <label for="category">Category</label>
+    <input
+      type="text"
+      name="name"
+      value="<%= category.name%>"
+      class="p-2 border border-slate-500 rounded my-2"
+    />
 
-  <div class="flex justify-between my-4">
-    <label for="color">Color</label>
-    <input type="color" name="color" value="<%= category.color %>" />
-  </div>
-  <button type="submit" class="px-6 py-3 border border-black rounded-md">
-    Save
-  </button>
-</form>
+    <div class="flex justify-between my-4">
+      <label for="color">Color</label>
+      <input type="color" name="color" value="<%= category.color %>" />
+    </div>
+    <button
+      type="submit"
+      class="px-6 py-3 border border-black rounded-md hover:bg-neutral-200"
+    >
+      Save
+    </button>
+
+    <a
+      href="/categories"
+      class="mt-3 px-6 py-3 border border-black rounded-md hover:bg-neutral-200 text-center"
+    >
+      Cancel
+    </a>
+  </form>
+
+  <!-- hidden checkbox to toggle delete modal -->
+  <input type="checkbox" id="deleteToggle" class="hidden peer" />
+  <label
+    for="deleteToggle"
+    class="mt-3 px-6 py-3 border border-red-600 rounded-md text-red-600 text-center hover:cursor-pointer hover:bg-neutral-200"
+  >
+    Delete Category
+  </label>
+
+  <%- include('deleteCategory', category) %>
+</div>

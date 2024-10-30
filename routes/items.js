@@ -7,6 +7,7 @@ router.get('/new', controller.addItemGet);
 router.post('/new', controller.addItemPost);
 router.get('/edit/:id', controller.editItemGet);
 router.post('/edit/:id', controller.editItemPost);
+router.post('/delete/:id', controller.deleteItemPost);
 router.get('/:id', controller.getItemDetails);
 
 module.exports = router;

@@ -1,43 +1,85 @@
-<h1 class="font-bold m-5"><%= title %></h1>
-<form action="/items/edit/<%= item.id %>" method="POST" class="flex flex-col">
-  <img src="<%=item.src%>" alt="" class="w-24 h-24 self-center" />
-  <label for="name">Name</label>
-  <input
-    type="text"
-    name="name"
-    value="<%=item.name%>"
-    required
-    class="p-2 border border-slate-500 rounded mb-2"
-  />
-  <label for="price">Price</label>
-  <input
-    type="number"
-    name="price"
-    value="<%=item.price%>"
-    min="0"
-    max="50"
-    required
-    class="p-2 border border-slate-500 rounded mb-2"
-  />
-  <label for="qty">Qty </label>
-  <input
-    type="number"
-    name="qty"
-    value="<%=item.qty%>"
-    min="0"
-    max="100"
-    required
-    class="p-2 border border-slate-500 rounded mb-2"
-  />
-  <label for="src">Image</label>
-  <input
-    type="file"
-    name="src"
-    accept="image/*"
-    value="<%=item.src%>"
-    class="mb-2"
-  />
-  <button type="submit" class="my-2 px-6 py-3 border border-black rounded-md">
-    Save
-  </button>
-</form>
+<div class="flex flex-col">
+  <h1 class="font-bold m-5 text-center"><%= title %></h1>
+  <form action="/items/edit/<%= item.id %>" method="POST" class="flex flex-col">
+    <img src="<%=item.src%>" alt="" class="w-24 h-24 self-center" />
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      value="<%=item.name%>"
+      required
+      class="p-2 border border-slate-500 rounded mb-2"
+    />
+    <label for="price">Price</label>
+    <input
+      type="number"
+      name="price"
+      value="<%=item.price%>"
+      min="0"
+      max="50"
+      required
+      class="p-2 border border-slate-500 rounded mb-2"
+    />
+    <label for="qty">Qty </label>
+    <input
+      type="number"
+      name="qty"
+      value="<%=item.qty%>"
+      min="0"
+      max="100"
+      required
+      class="p-2 border border-slate-500 rounded mb-2"
+    />
+    <label for="src">Image</label>
+    <input
+      type="file"
+      name="src"
+      accept="image/*"
+      value="<%=item.src%>"
+      class="mb-2"
+    />
+
+    <label class="my-3">Select one or more categories:</label>
+    <!-- prettier-ignore -->
+    <div class="h-36 flex flex-col flex-wrap">
+    <% categories.forEach((category) => { %>
+    <label for="categories" class="m-1">
+      <input
+        type="checkbox"
+        name="categories"
+        value="<%= category.name %>"
+        class="w-5 h-5"
+        <%= itemCategories.includes(category.name) ? 'checked' : '' %>
+      />
+      <span></span>
+      <%= category.name %>
+    </label>
+    <% }) %>
+  </div>
+
+    <button
+      type="submit"
+      class="my-3 px-6 py-3 border border-black rounded-md hover:bg-neutral-200"
+    >
+      Save
+    </button>
+
+    <a
+      href="/items"
+      class="px-6 py-3 border border-black rounded-md hover:bg-neutral-200 text-center"
+    >
+      Cancel
+    </a>
+  </form>
+
+  <!-- hidden checkbox to toggle delete modal -->
+  <input type="checkbox" id="deleteToggle" class="hidden peer" />
+  <label
+    for="deleteToggle"
+    class="mt-3 px-6 py-3 border border-red-600 rounded-md text-red-600 text-center hover:cursor-pointer hover:bg-neutral-200"
+  >
+    Delete Item
+  </label>
+
+  <%- include('deleteItem', item) %>
+</div>
